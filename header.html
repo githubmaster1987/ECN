@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" >
+   <head>
+       <title>les enfants du noma</title>
+       <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+	   <link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
+	   <SCRIPT LANGUAGE="Javascript" SRC="js/script_money.js"> </SCRIPT>
+
+		<script>
+			function confirmByForm(text,id)
+			{
+				if(confirm(text))
+				{
+					document.getElementById(id).submit()		
+				}
+			}
+			
+			function ConvertLettre(iddeb,idfin)
+			{
+				var montant = document.getElementById(iddeb).value;
+				if(isNaN(montant))
+				{
+					alert('Merci de verifier le montant.');
+				}else
+				{
+					var lettre = ConvNumberLetter(montant,1,0);
+					 document.getElementById(idfin).value = lettre;
+				}
+			}
+			
+			//verification du champ nom pour l'ajout d'un donateur
+			function verifNom()
+			{
+				var nom = document.getElementById("nom").value;
+				if(trim(nom) == "")
+				{
+					alert("Veuillez entrer un Nom de donateur");
+					return false;
+				}
+				else{
+					return true;
+				}
+			}
+			
+			
+			function trim(str)
+			{
+			if(!str || typeof str != 'string')
+					return "";
+
+					return str.replace(/^[\s]+/,'').replace(/[\s]+$/,'').replace(/[\s]{2,}/,' ');
+			}
+		</script>
+
+   </head>
+   
+   <body>
+   	<div id="header" align="center" style="margin-top:20px;background-image:url('images/header.png'); width:804; height:120;"></div>
